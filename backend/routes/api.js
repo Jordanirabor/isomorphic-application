@@ -1,8 +1,8 @@
 const Pet = require('../models/pet').default;
 const express = require('express');
+const multer = require('multer')
 const router = express.Router();
-var multer = require('multer')
-var upload = multer({ dest: 'uploads/' })
+const upload = multer({ dest: 'uploads/' })
 
 router.post('/pet/new', upload.single('image'), (req, res) => {
     Pet.create({
@@ -21,6 +21,7 @@ router.post('/pet/new', upload.single('image'), (req, res) => {
 })
 
 router.get('/pets', (req, res) => {
+    console.log('stuff')
     const pets = Pet.find({}, (err, pets) => {
         if (err) {
             console.log('RETRIEVE error: ' + err);
@@ -29,7 +30,6 @@ router.get('/pets', (req, res) => {
             res.status(200).json(pets);
         }
     })
-
 })
 
 module.exports = router;

@@ -27,5 +27,11 @@ db.once('open', () => {
     app.listen(9000, () => {
         console.log('Running on port 9000')
     })
-    db.collection('pets').insertMany(pets)
+
+    const petCollection = db.collection('pets')
+
+    petCollection.estimatedDocumentCount((err, count) => {
+        if (count) return
+        petCollection.insertMany(pets)
+    })
 })
