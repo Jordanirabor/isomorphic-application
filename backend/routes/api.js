@@ -26,12 +26,14 @@ router.post('/pet/new', upload.single('image'), (req, res) => {
         });
 
     } else {
+        const host = req.get('host')
+        const imageUrl = req.protocol + "://" + host + '/' + req.file.path;
 
         Pet.create({
             name: req.body.name,
             type: req.body.type,
             description: req.body.description,
-            imageUrl: req.file.path
+            imageUrl
         }, (err, pet) => {
             if (err) {
                 console.log('CREATE error: ' + err);
