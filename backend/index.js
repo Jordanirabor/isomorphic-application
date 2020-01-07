@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const morgan = require('morgan');
 const api = require('./routes/api')
 const pets = require('./mock')
-var path = require('path');
+const path = require('path');
 
 const app = express()
 
