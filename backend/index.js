@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+const morgan = require('morgan');
 const api = require('./routes/api')
 const pets = require('./mock')
+var path = require('path');
 
 const app = express()
 
@@ -15,7 +17,9 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/api', api)
+app.use('/api', api);
+app.use(morgan('dev'));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 mongoose.connect('mongodb://localhost:27017/pets', { useNewUrlParser: true });
 

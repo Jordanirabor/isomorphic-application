@@ -1,27 +1,49 @@
 const Pet = require('../models/pet');
 const express = require('express');
+const path = require('path')
 const multer = require('multer')
+const crypto = require('crypto')
 const router = express.Router();
-const upload = multer({ dest: 'uploads/' })
+
+const storage = multer.diskStorage({
+    destination: 'public',
+    filename: (req, file, callback) => {
+        crypto.pseudoRandomBytes(16, function (err, raw) {
+            if (err) return callback(err);
+            callback(null, raw.toString('hex') + path.extname(file.originalname));
+        });
+    }
+});
+
+var upload = multer({ storage: storage })
 
 router.post('/pet/new', upload.single('image'), (req, res) => {
-    Pet.create({
-        name: req.body.name,
-        type: req.body.type,
-        image: req.file.image,
-        description: req.body.description
-    }, (err, pet) => {
-        if (err) {
-            console.log('CREATE error: ' + err);
-            res.status(500).send('Error')
-        } else {
-            res.status(200).json(pet)
-        }
-    })
+    if (!req.file) {
+
+        console.log("Please include a pet image");
+        return res.send({
+            success: false
+        });
+
+    } else {
+
+        Pet.create({
+            name: req.body.name,
+            type: req.body.type,
+            description: req.body.description,
+            imageUrl: req.file.path
+        }, (err, pet) => {
+            if (err) {
+                console.log('CREATE error: ' + err);
+                res.status(500).send('Error')
+            } else {
+                res.status(200).json(pet)
+            }
+        })
+    }
 })
 
 router.get('/pets', (req, res) => {
-    console.log('stuff')
     const pets = Pet.find({}, (err, pets) => {
         if (err) {
             console.log('RETRIEVE error: ' + err);
