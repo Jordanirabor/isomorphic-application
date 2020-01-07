@@ -1,4 +1,4 @@
-const Pet = require('../models/pet').default;
+const Pet = require('../models/pet');
 const express = require('express');
 const multer = require('multer')
 const router = express.Router();
@@ -7,7 +7,7 @@ const upload = multer({ dest: 'uploads/' })
 router.post('/pet/new', upload.single('image'), (req, res) => {
     Pet.create({
         name: req.body.name,
-        type: req.body.name,
+        type: req.body.type,
         image: req.file.image,
         description: req.body.description
     }, (err, pet) => {
