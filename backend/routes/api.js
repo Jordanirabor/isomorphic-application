@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
     }
 });
 
-var upload = multer({ storage: storage })
+let upload = multer({ storage: storage })
 
 router.post('/pet/new', upload.single('image'), (req, res) => {
     if (!req.file) {
