@@ -3,6 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    titleTemplate: '%s | Adopt a pen today',
     title: 'frontend',
     meta: [
       { charset: 'utf-8' },
@@ -10,7 +11,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css'
+      },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap' }
     ]
   },
   /*
@@ -24,7 +30,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
+    extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
