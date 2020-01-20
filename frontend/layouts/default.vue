@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <!-- navigation -->
+    <!-- begin navigation -->
     <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-start">
@@ -26,18 +26,33 @@
         </div>
       </div>
     </nav>
-    <!-- /navigation -->
+    <!-- end navigation -->
 
     <!-- displays the page component -->
     <nuxt />
+
+    <!-- begin footer -->
+    <footer class="footer has-background-black">
+      <div class="content has-text-centered">
+        <p class="has-text-white">
+          <strong class="has-text-white">Pet adoption website</strong> by
+          <a href="https://github.com/Jordanirabor">Jordan</a>
+        </p>
+      </div>
+    </footer>
+    <!-- end footer -->
   </div>
 </template>
 
 <style>
 .main-content {
-  margin: 30px 0;
+  margin: 40px 0;
 }
 body {
   font-family: "Open Sans Condensed", sans-serif;
+}
+
+p {
+  font-size: 22px;
 }
 </style>
