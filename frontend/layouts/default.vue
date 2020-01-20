@@ -16,7 +16,6 @@
           </nuxt-link>
 
           <nuxt-link active-class="is-active" to="/" class="navbar-item is-tab" exact>Home</nuxt-link>
-          <nuxt-link active-class="is-active" to="/contact" class="navbar-item is-tab" exact>Contact</nuxt-link>
           <nuxt-link
             active-class="is-active"
             to="/pet"

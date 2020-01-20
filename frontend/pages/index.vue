@@ -1,4 +1,5 @@
 <!-- ./pages/index.vue -->
+
 <template>
   <!-- begin header -->
   <div>
