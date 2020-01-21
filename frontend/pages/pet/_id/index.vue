@@ -7,7 +7,7 @@
         <header class="card-header">
           <p class="card-header-title is-centered">{{ pet.name }}</p>
         </header>
-        <div class="card-content has-background-grey-light">
+        <div class="card-content has-background-dark">
           <figure class="image is-1by1">
             <img class :src="`${pet.imageUrl}`" />
           </figure>
