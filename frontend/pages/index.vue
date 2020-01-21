@@ -23,7 +23,7 @@
           <div class="column is-half" v-for="pet in pets" :key="pet._id">
             <div class="card">
               <header class="card-header">
-                <p class="card-header-title has-text-centered">{{ pet.name }}</p>
+                <p class="card-header-title is-centered">{{ pet.name }}</p>
               </header>
               <div class="card-content has-background-grey-light">
                 <figure class="image is-3by2">
