@@ -45,6 +45,19 @@ router.post('/pet/new', upload.single('image'), (req, res) => {
     }
 })
 
+router.get('/pet/:_id', (req, res) => {
+    Pet.findById(req.params._id, (err, pet) => {
+        if (err) {
+            console.log('RETRIEVE error: ' + err);
+            res.status(500).send('Error');
+        } else if (pet) {
+            res.status(200).json(pet)
+        } else {
+            res.status(404).send('Item not found')
+        }
+    })
+})
+
 router.get('/pets', (req, res) => {
     const pets = Pet.find({}, (err, pets) => {
         if (err) {

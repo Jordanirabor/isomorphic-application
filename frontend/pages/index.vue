@@ -25,9 +25,9 @@
               <header class="card-header">
                 <p class="card-header-title is-centered">{{ pet.name }}</p>
               </header>
-              <div class="card-content has-background-grey-light">
+              <div class="card-content">
                 <figure class="image is-3by2">
-                  <img class="is-rounded" :src="`${pet.imageUrl}`" />
+                  <img :src="`${pet.imageUrl}`" />
                 </figure>
               </div>
               <footer class="card-footer">

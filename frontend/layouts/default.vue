@@ -18,7 +18,7 @@
           <nuxt-link active-class="is-active" to="/" class="navbar-item is-tab" exact>Home</nuxt-link>
           <nuxt-link
             active-class="is-active"
-            to="/pet"
+            to="/pet/new"
             class="navbar-item is-tab"
             exact
           >Post your own pet 😎</nuxt-link>
@@ -31,7 +31,7 @@
     <nuxt />
 
     <!-- begin footer -->
-    <footer class="footer has-background-black">
+    <footer class="footer home-footer has-background-black">
       <div class="content has-text-centered">
         <p class="has-text-white">
           <strong class="has-text-white">Pet adoption website</strong> by
@@ -45,7 +45,7 @@
 
 <style>
 .main-content {
-  margin: 40px 0;
+  margin: 20px 0;
 }
 body {
   font-family: "Open Sans Condensed", sans-serif;
@@ -53,5 +53,9 @@ body {
 
 p {
   font-size: 22px;
+}
+
+.home-footer{
+  margin-top: 20vh;
 }
 </style>
