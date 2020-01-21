@@ -20,18 +20,18 @@
       <div class="container">
         <h1 class="title has-text-centered">Available pets</h1>
         <div class="columns is-multiline">
-          <div class="column is-half" v-for="pet in pets" :key="pet.id">
+          <div class="column is-half" v-for="pet in pets" :key="pet._id">
             <div class="card">
               <header class="card-header">
                 <p class="card-header-title has-text-centered">{{ pet.name }}</p>
               </header>
-              <div class="card-content">
+              <div class="card-content has-background-grey-light">
                 <figure class="image is-3by2">
-                  <img :src="`${pet.imageUrl}`" />
+                  <img class="is-rounded" :src="`${pet.imageUrl}`" />
                 </figure>
               </div>
               <footer class="card-footer">
-                <nuxt-link :to="`/pet/${pet.id}`" class="card-footer-item">
+                <nuxt-link :to="`/pet/${pet._id}`" class="card-footer-item">
                   <button class="button is-dark">Learn more about {{ pet.name }}</button>
                 </nuxt-link>
               </footer>
