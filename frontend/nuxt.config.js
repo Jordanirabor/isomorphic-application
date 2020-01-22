@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s | Adopt a pen today',
+    titleTemplate: '%s | Adopt a pet today',
     title: 'frontend',
     meta: [
       { charset: 'utf-8' },
