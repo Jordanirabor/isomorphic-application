@@ -1,3 +1,5 @@
+<!-- pages/pet/new.vue -->
+
   <template>
   <div class="container">
     <br />
@@ -8,7 +10,12 @@
           <div class="field">
             <label class="label">Name</label>
             <div class="control">
-              <input class="input" type="text" placeholder="What is your pet's name?" v-model="pet.name" />
+              <input
+                class="input"
+                type="text"
+                placeholder="What is your pet's name?"
+                v-model="pet.name"
+              />
             </div>
           </div>
 
@@ -34,6 +41,7 @@
               </span>
             </label>
           </div>
+          <br />
 
           <div class="field">
             <label class="label">Type of pet</label>
