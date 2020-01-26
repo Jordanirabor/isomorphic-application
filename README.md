@@ -22,4 +22,4 @@ Node
 
 ## Built With
 MongoDB - MongoDB is a cross-platform document-oriented database program.
-Nuxt - Nuxt is a progressive framework based on Vue, it is used to create modern server-side rendered web applications. 
+Nuxt - Nuxt is a progressive framework based on Vue, it is used to create modern server-side rendered web applications.git 
